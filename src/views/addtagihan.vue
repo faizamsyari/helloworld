@@ -22,7 +22,7 @@ export default{
             console.log(this.alamat)
         },
         addtagihan(){
-            let result =  axios.post("http://localhost:4000/addtagihan",{
+            let result =  axios.post("https://agreeable-blue-shrug.cyclic.app/addtagihan",{
                 "id":this.id,
                 "nama":this.nama,
                 "alamat":this.alamat,

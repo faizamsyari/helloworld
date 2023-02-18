@@ -16,7 +16,7 @@ export default{
     },
     methods:{
         logout(){
-            let result =  axios.post("http://localhost:4000/logout").then(response=>{
+            let result =  axios.post("https://agreeable-blue-shrug.cyclic.app/logout").then(response=>{
                 // console.log(response.data);
                 if(`${response.data}` == "AKUN TERLOGOUT"){
                     alert("LOGOUT BERHASIL")
@@ -30,7 +30,7 @@ export default{
             
         },
         async ambildata(){
-            const response= await axios.post("http://localhost:4000/ambildataperuser",{
+            const response= await axios.post("https://agreeable-blue-shrug.cyclic.app/ambildataperuser",{
                       "id": this.id
                     }).then(response =>{
                       console.log(response.data)
@@ -42,7 +42,7 @@ export default{
             console.log(this.id)
         },
         cek(x){
-            let result =  axios.post("http://localhost:4000/ambilbayaran",{
+            let result =  axios.post("https://agreeable-blue-shrug.cyclic.app/ambilbayaran",{
                 "order_id":x.idku,
                 "id":this.id,
             }).then(response=>{
@@ -58,7 +58,7 @@ export default{
                     alert("Ada Kesalahan Silahkan Coba Lagi, Transaksi Tidak Ada")
                 } else if (datares.transaction_status == "settlement" && statusres == "success"){
                     alert("SELAMAT PEMBAYARAN TERKONFIRMASI DAN BERHASIL")
-                    let result =  axios.post("http://localhost:4000/login",{
+                    let result =  axios.post("https://agreeable-blue-shrug.cyclic.app/login",{
                         "nama":this.em,    
                         "alamat":this.pw,
                     }).then(async response =>{
@@ -70,7 +70,7 @@ export default{
                             this.$router.push("/login")
                         } else if (`${datares.data}` == "BERHASIL LOGIN") {
                         // alert(`${response.data}`)
-                            const response= await axios.post("http://localhost:4000/cekuser",{
+                            const response= await axios.post("https://agreeable-blue-shrug.cyclic.app/cekuser",{
                             "id": datares.uid
                         }).then(response =>{
                             console.log(response.data)
@@ -106,7 +106,7 @@ export default{
         },
         async bayar(x){
             // console.log(x.idku)
-            const response= await axios.post("http://localhost:4000/bayar",{
+            const response= await axios.post("https://agreeable-blue-shrug.cyclic.app/bayar",{
                 "payment_type": "bank_transfer",
                 "bank_transfer": {
                     "bank": "bca"

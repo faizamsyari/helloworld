@@ -15,7 +15,7 @@ export default{
     },
     methods:{
         cek(){
-            let result =  axios.post("http://localhost:4000/ambilbayaran",{
+            let result =  axios.post("https://agreeable-blue-shrug.cyclic.app/ambilbayaran",{
                 "order_id":this.id,
                 "id":this.idku,
             }).then(response=>{
@@ -31,7 +31,7 @@ export default{
                 }
                 else if (datajson.transaction_status == "settlement" && status == "success"){
                     alert("SELAMAT PEMBAYARAN TERFONFIRMASI DAN BERHASIL")
-                    let result =  axios.post("http://localhost:4000/login",{
+                    let result =  axios.post("https://agreeable-blue-shrug.cyclic.app/login",{
                         "nama":this.em,    
                         "alamat":this.pw,
                     }).then(async response =>{
@@ -43,7 +43,7 @@ export default{
                             this.$router.push("/login")
                         } else if (`${datares.data}` == "BERHASIL LOGIN") {
                         // alert(`${response.data}`)
-                            const response= await axios.post("http://localhost:4000/cekuser",{
+                            const response= await axios.post("https://agreeable-blue-shrug.cyclic.app/cekuser",{
                             "id": datares.uid
                         }).then(response =>{
                             console.log(response.data)

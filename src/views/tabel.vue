@@ -23,7 +23,7 @@ export default{
     //     console.log(this.datasensor)
     // }
     async getData(){
-        const response= await axios.get("http://localhost:4000/get")
+        const response= await axios.get("https://agreeable-blue-shrug.cyclic.app/get")
         this.datasensor = response.data
         console.log(this.datasensor)
     },
@@ -31,7 +31,7 @@ export default{
     hapus(x){
         console.log(x.id)
         console.log(x.idku)
-        const response = axios.post("http://localhost:4000/hapus/",{
+        const response = axios.post("https://agreeable-blue-shrug.cyclic.app/hapus",{
             "id":x.id,
             "idku":x.idku
             // "email":x.email

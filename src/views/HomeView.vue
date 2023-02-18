@@ -24,7 +24,7 @@
             if(this.value.length < 1){
                 alert("Data Tidak Boleh Kosong")
             } else {
-                let result =  axios.post("http://localhost:4000/login",{
+                let result =  axios.post("https://agreeable-blue-shrug.cyclic.app/login",{
                 "nama":this.value,    
                 "alamat":this.nomor,
                 }).then(async response =>{
@@ -36,7 +36,7 @@
                         this.$router.push("/login")
                   } else if (`${datares.data}` == "BERHASIL LOGIN") {
                     // alert(`${response.data}`)
-                    const response= await axios.post("http://localhost:4000/cekuser",{
+                    const response= await axios.post("https://agreeable-blue-shrug.cyclic.app/cekuser",{
                       "id": datares.uid
                     }).then(response =>{
                       console.log(response.data)
