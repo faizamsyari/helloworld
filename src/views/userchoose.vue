@@ -11,7 +11,7 @@
     },
     methods:{
         async cek(){
-           const get =  await axios.get("https://agreeable-blue-shrug.cyclic.app/cobasaja")
+           const get =  await axios.get("https://tame-lime-mackerel-wrap.cyclic.app/cobasaja")
            this.dataku = get.data
            console.log(this.dataku)
         },

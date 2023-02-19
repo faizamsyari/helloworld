@@ -26,7 +26,7 @@ export default{
         console.log(this.id)
         console.log(this.idku)
         if(this.statusku == "Lunas"){
-            const response = await axios.put("https://agreeable-blue-shrug.cyclic.app/update",{
+            const response = await axios.put("https://tame-lime-mackerel-wrap.cyclic.app/update",{
                 "id":this.id,
                 "idku":this.idku,
                 "nama":this.value,
@@ -39,7 +39,7 @@ export default{
             alert("Data Terupdate")
             this.$router.push("/tabel")
         } else if(this.statusku == "Belum Lunas") {
-            const response = await axios.put("https://agreeable-blue-shrug.cyclic.app/update",{
+            const response = await axios.put("https://tame-lime-mackerel-wrap.cyclic.app/update",{
                 "id":this.id,
                 "idku":this.idku,
                 "nama":this.value,

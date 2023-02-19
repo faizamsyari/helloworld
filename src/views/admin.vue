@@ -24,7 +24,7 @@ export default{
             if(this.value.length < 1){
                 alert("Data Tidak Boleh Kosong")
             } else {
-                let result =  axios.post("https://agreeable-blue-shrug.cyclic.app/create",{
+                let result =  axios.post("https://tame-lime-mackerel-wrap.cyclic.app/create",{
                 "nama":this.value,
                 "email":this.email,
                 "password":this.password,
@@ -52,7 +52,7 @@ export default{
             this.$router.push("/choose")
         },
         logout(){
-            let result =  axios.post("https://agreeable-blue-shrug.cyclic.app/logout").then(response=>{
+            let result =  axios.post("https://tame-lime-mackerel-wrap.cyclic.app/logout").then(response=>{
                 // console.log(response.data);
                 if(`${response.data}` == "AKUN TERLOGOUT"){
                     alert("LOGOUT BERHASIL")
