@@ -57,38 +57,4 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach((to,from, next)=>{
-  const isauthen = JSON.parse(localStorage.getItem("autenticated"));
-  const cek = localStorage.getItem("status");
-  const cekpembayaran = localStorage.getItem("statuspembayaran");
-  console.log(to,from)
-  if(to.name != "home" && isauthen == false){
-    console.log("INI MASUK KE LOGIN")
-    next({path:"/"})
-  } else if (to.name == "home" && isauthen == true && cek == "admin") {
-    console.log("TIDAK BOLEH")
-    next({path:"/admin"})
-
-  } else if (to.name == "admin" && cek == "client") {
-    next({name:"home"})
-  } else if (to.name == "tabel" && cek == "client"){
-    next({name:"home"})
-    
-  } else if (to.name == "tagihan" && cek == "client"){
-    next({path:"/"})
-  } else if (to.name == "update" && cek == "client"){
-    next({path:"/"})
-  }
-  else if(to.name == "login" && from.name == "landing" && isauthen ==false){
-    next({path:"/"})
-  } else if(to.name == "landing" && cek == "admin"){
-    next({path:"/admin"})
-  } 
-  else {
-    next()
-  }
-  
-})
-
-
 export default router
